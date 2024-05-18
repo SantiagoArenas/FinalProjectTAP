@@ -47,4 +47,21 @@ public class ServicioConocimiento {
         }
         return conocimientos;
     }
+
+
+    public void borrar(Conocimiento conocimiento) {
+        Conocimiento c = repoConocimiento.findByNombre(conocimiento.getNombre());
+        if (c != null) {
+            repoConocimiento.delete(c);
+        }
+    }
+
+    public Conocimiento findByNombre(String nombre) {
+        return repoConocimiento.findByNombre(nombre);
+    }
+    public boolean existe(Conocimiento conocimiento) {
+        return repoConocimiento.existsByNombre(conocimiento.getNombre());
+    }
+
+
 }
