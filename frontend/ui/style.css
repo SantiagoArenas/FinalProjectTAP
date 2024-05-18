@@ -1,70 +1,44 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-}
-
-ul{
-    list-style-type: none;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f8f8f8;
-}
-.menu {
-    display: flex;
-    gap: 10px;
-}
-.menu-item {
-    margin-right: 10px;
-}
-.menu-item a {
-    text-decoration: none;
-    color: #333;
-}
-
-.nav {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    transform: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f8f8f8;
-    transition: all 0.8s ease; /* Añade una transición suave */
-}
-
-@media screen and (max-width: 768px) {
-    .nav {
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 .navbar {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    margin: 0; /* Elimina los márgenes de la lista */
-    padding: 0; /* Elimina el padding de la lista */
-    overflow: hidden; /* Evita que los elementos de la lista se desborden */
-    display: flex; /* Alinea los elementos de la lista horizontalmente */
+    background-color: #333;
 }
 
-.nav-item {
-    padding: 10px; /* Espacio alrededor de cada elemento de la lista */
+.navbar a {
+    color: #fff;
 }
 
-.small-nav {
-    height: 30px; /* Ajusta este valor según el tamaño que quieras que tenga tu barra de navegación al minimizarse */
+.navbar .navbar-brand {
+    color: #fff;
 }
 
-.small-nav .nav-item {
-    display: none; /* Oculta el texto de los elementos de la barra de navegación */
+.card {
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.small-nav {
-    height: 30px; /* Ajusta este valor según el tamaño que quieras que tenga tu barra de navegación al minimizarse */
-    transition: all 0.3s ease; /* Añade una transición suave */
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card .card-body {
+    padding: 20px;
+}
+
+.card .card-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card .card-text {
+    font-size: 16px;
+    color: #333;
 }
