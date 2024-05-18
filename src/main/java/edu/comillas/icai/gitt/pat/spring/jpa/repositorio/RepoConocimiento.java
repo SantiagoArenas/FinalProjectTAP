@@ -6,5 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface RepoConocimiento extends CrudRepository<Conocimiento, Long> {
 
     public Conocimiento findByNombre(String nombre);
+    boolean existsByNombre(String nombre);
 
 }

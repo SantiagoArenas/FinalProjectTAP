@@ -6,7 +6,6 @@ import edu.comillas.icai.gitt.pat.spring.jpa.servicio.ServicioConocimiento;
 import edu.comillas.icai.gitt.pat.spring.jpa.servicio.ServicioMedico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -16,28 +15,28 @@ import java.util.ArrayList;
 public class ControladorConocimiento {
 
     @Autowired
-    RepoConocimientoMedico repoConocimientoMedico;
+    private RepoConocimientoMedico repoConocimientoMedico;
 
     @Autowired
-    RepoConocimientoSala repoConocimientoSala;
+    private RepoConocimientoSala repoConocimientoSala;
 
     @Autowired
-    RepoConocimiento repoConocimiento;
+    private RepoConocimiento repoConocimiento;
 
     @Autowired
-    ServicioConocimiento servicioConocimiento;
+    private ServicioConocimiento servicioConocimiento;
 
     @Autowired
-    ServicioMedico servicioMedico;
+    private ServicioMedico servicioMedico;
 
     @Autowired
-    RepoMedico repoMedico;
+    private RepoMedico repoMedico;
 
     @Autowired
-    RepoSala repoSala;
+    private RepoSala repoSala;
 
     @PostMapping("/api/conocimientos")
-    public String crear(@RequestBody Conocimiento c, @CookieValue(value = "session", required = true) String sesion){
+    public String crear(@RequestBody Conocimiento c, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         if (!medico.jefe) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
@@ -45,71 +44,76 @@ public class ControladorConocimiento {
     }
 
     @DeleteMapping("/api/conocimientos")
-    public void borrar(@RequestBody Conocimiento c, @CookieValue(value = "session", required = true) String sesion){
+    public void borrar(@RequestBody Conocimiento c, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
-        if (!medico.jefe) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
-        Conocimiento conocimiento = repoConocimiento.findByNombre(c.nombre);
+        if (!medico.isJefe()) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        Conocimiento conocimiento = repoConocimiento.findByNombre(c.getNombre());
+        if (conocimiento == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Conocimiento no encontrado");
+        }
         repoConocimiento.delete(conocimiento);
     }
 
     @PostMapping("/api/conocimientos/medicos/{email}")
-    public ConocimientoMedico addToMedico(@RequestBody Conocimiento c, @PathVariable String email, @CookieValue(value = "session", required = true) String sesion){
+    public ConocimientoMedico addToMedico(@RequestBody Conocimiento c, @PathVariable String email, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         if (!medico.jefe) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         ConocimientoMedico cm = new ConocimientoMedico();
         Medico m = repoMedico.findByEmail(email);
         if (m == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        cm.medico = m;
-        cm.conocimiento = repoConocimiento.findByNombre(c.nombre);
+        cm.setMedico(m);
+        cm.setConocimiento(repoConocimiento.findByNombre(c.getNombre()));
         return repoConocimientoMedico.save(cm);
     }
 
     @DeleteMapping("/api/conocimientos/medicos/{email}")
-    public void removeFromMedico(@RequestBody Conocimiento c, @PathVariable String email, @CookieValue(value = "session", required = true) String sesion){
+    public void removeFromMedico(@RequestBody Conocimiento c, @PathVariable String email, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         if (!medico.jefe) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         Medico m = repoMedico.findByEmail(email);
         if (m == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        Conocimiento conocimiento = repoConocimiento.findByNombre(c.nombre);
+        Conocimiento conocimiento = repoConocimiento.findByNombre(c.getNombre());
         ConocimientoMedico cm = repoConocimientoMedico.findByMedicoAndConocimiento(m, conocimiento);
         repoConocimientoMedico.delete(cm);
     }
 
     @PostMapping("/api/conocimientos/salas/{nombreSala}")
-    public ConocimientoSala addToSala(@RequestBody Conocimiento c, @PathVariable String nombreSala, @CookieValue(value = "session", required = true) String sesion){
+    public ConocimientoSala addToSala(@RequestBody Conocimiento c, @PathVariable String nombreSala, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         if (!medico.jefe) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         ConocimientoSala cs = new ConocimientoSala();
         Sala sala = repoSala.findByNombre(nombreSala);
         if (sala == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        cs.sala = sala;
-        cs.conocimiento = repoConocimiento.findByNombre(c.nombre);
+        cs.setSala(sala);
+        cs.setConocimiento(repoConocimiento.findByNombre(c.getNombre()));
         return repoConocimientoSala.save(cs);
     }
 
     @DeleteMapping("/api/conocimientos/salas/{nombreSala}")
-    public void removeFromSala(@RequestBody Conocimiento c, @PathVariable String nombreSala, @CookieValue(value = "session", required = true) String sesion){
+    public void removeFromSala(@RequestBody Conocimiento c, @PathVariable String nombreSala, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         if (!medico.jefe) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         Sala s = repoSala.findByNombre(nombreSala);
         if (s == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        Conocimiento conocimiento = repoConocimiento.findByNombre(c.nombre);
+        Conocimiento conocimiento = repoConocimiento.findByNombre(c.getNombre());
         ConocimientoSala cs = repoConocimientoSala.findBySalaAndConocimiento(s, conocimiento);
         repoConocimientoSala.delete(cs);
     }
 
     @GetMapping("/api/conocimientos/medicos/{email}")
-    public ArrayList<Conocimiento> getConocimientos(@PathVariable String email, @CookieValue(value = "session", required = true) String sesion){
+    public ArrayList<Conocimiento> getConocimientos(@PathVariable String email, @RequestHeader("session") String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         Medico m = repoMedico.findByEmail(email);
         if (m == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         return servicioConocimiento.getConocimientosMedico(m);
     }
+
+
 
 }

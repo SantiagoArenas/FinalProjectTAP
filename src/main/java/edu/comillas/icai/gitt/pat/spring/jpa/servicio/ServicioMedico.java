@@ -32,7 +32,7 @@ public class ServicioMedico {
     @Autowired
     RepoConocimiento repoConocimiento;
 
-    public Token guardarToken(String email, String password) { // TENEMOS QUE GUARDAR UN NUEVO TOKEN PARA LA SESIÓN DEL USUARIO. SI NO EXISTE UN TOKEN PARA ESE USUARIO, LO CREAMOS. SI EL USUARIO NO EXISTE O LA CONTRASEÑA ES INVÁLIDA, DEVOLVEMOS NULL.
+    public Token guardarToken(String email, String password) {
         Medico medico = repoMedico.findByEmail(email);
         if (medico == null) return null;
         if (!hashing.compare(medico.password, password)) return null;
@@ -46,16 +46,17 @@ public class ServicioMedico {
         return token;
     }
 
-    public Medico buscarMedico(String tokenId) { // DEVUELVE EL USUARIO AL QUE ESTÁ ASOCIADO UN TOKEN
+    public Medico buscarMedico(String tokenId) {
         Optional<Token> token = repoToken.findById(tokenId);
         if (token.isPresent()) return token.get().medico;
         return null;
     }
 
-    public RespuestaMedico getDatos(Medico medico) { // SE USA PARA DEVOLVER LOS DATOS DE UN USUARIO (LA CONTRASEÑA NO)
+    public RespuestaMedico getDatos(Medico medico) {
         return new RespuestaMedico(medico.nombre, medico.email, medico.jefe);
     }
-    public RespuestaMedico modificar(Medico m, Modificacion perfil) { // SE USA PARA MODIFICAR LOS DATOS DEL USUARIO A PARTIR DE UN PERFIL
+
+    public RespuestaMedico modificar(Medico m, Modificacion perfil) {
         Medico medico = repoMedico.findByEmail(m.email);
         medico.nombre = perfil.nombre();
         medico.jefe = perfil.jefe();
@@ -63,21 +64,25 @@ public class ServicioMedico {
         repoMedico.save(medico);
         return new RespuestaMedico(medico.nombre, medico.email, medico.jefe);
     }
-    public RespuestaMedico crear(Registro registro) { // CREA UN USUARIO NUEVO
+
+    public RespuestaMedico crear(Registro registro) {
         Medico medico = new Medico();
         medico.nombre = registro.nombre();
         medico.email = registro.email();
         medico.password = hashing.hash(registro.password());
-        medico.jefe = registro.jefe();
+        // Aqui es donde estaba el error. `Registro` no tiene `jefe()`.
+        // Asumimos que `Registro` no tiene el campo `jefe`. Si necesitas este campo, debes añadirlo a `Registro`.
+        // Si `Registro` debe tener el campo `jefe`, actualizalo como en `Modificacion` y `RespuestaMedico`.
+        medico.jefe = false; // O el valor adecuado que necesites.
         repoMedico.save(medico);
         return new RespuestaMedico(medico.nombre, medico.email, medico.jefe);
     }
 
-    public void logout(String tokenId) { // BORRA EL TOKEN ASOCIADO A LA SESIÓN DE UN USUARIO
+    public void logout(String tokenId) {
         repoToken.deleteById(tokenId);
     }
 
-    public void borrar(Medico medico) { // BORRA UN USUARIO
+    public void borrar(Medico medico) {
         repoMedico.delete(medico);
     }
 

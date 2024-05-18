@@ -12,5 +12,20 @@ public class Token {
 
     @OnDelete(action = OnDeleteAction.CASCADE) @OneToOne
     public Medico medico;
+    public Token() {}
+
+    public Token(String id) {
+        this.id = id;
+    }
+
+    // Getters y Setters
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
 }

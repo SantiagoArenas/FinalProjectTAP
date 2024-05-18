@@ -5,28 +5,49 @@ import edu.comillas.icai.gitt.pat.spring.jpa.modelo.PeticionCalendario;
 import edu.comillas.icai.gitt.pat.spring.jpa.servicio.ServicioCalendario;
 import edu.comillas.icai.gitt.pat.spring.jpa.servicio.ServicioMedico;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class ControladorCalendario {
 
-    @Autowired
-    ServicioCalendario servicioCalendario;
+    private final ServicioCalendario servicioCalendario;
+    private final ServicioMedico servicioMedico;
 
-    @Autowired
-    ServicioMedico servicioMedico;
-
-    @PostMapping("/api/medicos/me/calendario")
-    public void organizar(@Valid @RequestBody PeticionCalendario pc, @CookieValue(value = "session", required = true) String sesion){
-        Medico medico = servicioMedico.buscarMedico(sesion);
-        if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
-        servicioCalendario.gestionarMes(pc.año(), pc.mes());
+    public ControladorCalendario(ServicioCalendario servicioCalendario, ServicioMedico servicioMedico) {
+        this.servicioCalendario = servicioCalendario;
+        this.servicioMedico = servicioMedico;
     }
 
+    @PostMapping("/api/medicos/me/calendario")
+    public void organizar(@Valid @RequestBody PeticionCalendario pc, @RequestHeader(value = "session", required = true) String sesion) {
+        Medico medico = servicioMedico.buscarMedico(sesion);
+        if (medico == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized");
+        }
+        try {
+            servicioCalendario.gestionarMes(pc.getAnio(), pc.getMes());
+        } catch (RuntimeException e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        }
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<Map<String, String>> handleResponseStatusException(ResponseStatusException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", ex.getReason());
+        return new ResponseEntity<>(response, ex.getStatusCode());
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, String>> handleRuntimeException(RuntimeException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", ex.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
