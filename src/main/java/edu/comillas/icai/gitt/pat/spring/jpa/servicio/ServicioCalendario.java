@@ -27,7 +27,7 @@ public class ServicioCalendario {
     @Autowired
     ServicioConocimiento servicioConocimiento;
 
-    public void gestionarDia(int año, int mes, int d){
+    private void gestionarDia(int año, int mes, int d){
         Calendar dia = Calendar.getInstance();
         dia.set(año, mes, d);
         dia.set(Calendar.HOUR_OF_DAY, 0);
@@ -66,4 +66,16 @@ public class ServicioCalendario {
             gestionarDia(año, mes-1, dia);
         }
     }
+
+    public List<Calendario> getMes(PeticionCalendario pc){
+        List<Calendario> todos = (List<Calendario>) repoCalendario.findAll();
+        List<Calendario> peticion = new ArrayList<Calendario>();
+        for (Calendario c : todos){
+            if (c.dia.get(Calendar.MONTH) == pc.mes()-1 && c.dia.get(Calendar.YEAR) == pc.año()){
+                peticion.add(c);
+            }
+        }
+        return peticion;
+    }
+    
 }
