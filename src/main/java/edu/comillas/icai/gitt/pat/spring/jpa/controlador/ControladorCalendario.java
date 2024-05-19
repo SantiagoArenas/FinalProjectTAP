@@ -52,7 +52,7 @@ public class ControladorCalendario {
     }
 
     @GetMapping("/api/medicos/me/calendario")
-    public List<Calendario> getMes(@RequestBody PeticionCalendario pc, @CookieValue(value = "session", required = true) String sesion){
+    public List<Calendario> getMes(@Valid @RequestBody PeticionCalendario pc, @CookieValue(value = "session", required = true) String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         return servicioCalendario.getMes(pc);
