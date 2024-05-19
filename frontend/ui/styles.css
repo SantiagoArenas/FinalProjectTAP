@@ -8,6 +8,30 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Poppins", sans-serif;
 }
 
+.navbar-movil {
+    background-color: #343a40;
+    padding: 1rem;
+}
+.nav-item-movil .nav-link {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+.navbar-desktop {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.imagen-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.contenedor {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
 .navbar-brand {
     font-weight: bold;
 }
