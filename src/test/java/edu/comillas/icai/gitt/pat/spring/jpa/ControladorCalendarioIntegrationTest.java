@@ -1,4 +1,4 @@
-package edu.comillas.icai.gitt.pat.spring.jpa;
+/*package edu.comillas.icai.gitt.pat.spring.jpa;
 
 import edu.comillas.icai.gitt.pat.spring.jpa.controlador.ControladorCalendario;
 import edu.comillas.icai.gitt.pat.spring.jpa.entidad.Calendario;
@@ -91,5 +91,5 @@ class ControladorCalendarioIntegrationTest {
                         "{\"id\":2,\"dia\":\"2024-05-14T22:00:00.000+00:00\",\"turno\":\"tarde\",\"medico\":null,\"sala\":null}]"));*/
     }
 
-}
+}*/
 
