@@ -5,7 +5,8 @@ Práctica final de PAT de Santiago Arenas Martín, María Castilla Montes, Álva
 
 ### Definición del Roadmap:
 El proyecto se planificó en dos iteraciones de dos semanas cada una, con un ciclo de "desarrollo ágil". Cada iteración tiene objetivos claro, priorizando las tareas esenciales para garantizar un avance constante y que sea medible.
-Se eligieron Springs de dos semanas debido a la gran carga académica en el momento del curso en el que estabamos y siendo realistas de que habría semanas en las que no podríamos trabajar demasiado
+Se eligieron Springs de dos semanas debido a la gran carga académica en el momento del curso en el que estabamos y siendo realistas de que habría semanas en las que no podríamos trabajar demasiado.
+La planificación inicial esta hecha para que sea adaptable y flexible.
 
 #### Iteración 1 (Semana 1 - Semana 2):
 - **Objetivos:**
