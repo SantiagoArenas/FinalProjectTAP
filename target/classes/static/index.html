@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="styleRegistro.css">
+</head>
+<body>
+<h1>Login</h1>
+<form id="loginForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit">Login</button>
+    <button type="button" id="registerButton">Registrar</button>
+</form>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", login);
+    document.getElementById("registerButton").addEventListener("click", () => {
+        window.location.href = 'registro.html';
+    });
+
+    function login(event) {
+        event.preventDefault();
+        const correo = document.getElementById("email").value;
+        const contraseña = document.getElementById("password").value;
+
+        fetch('/api/medicos/me/sesion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'email': correo, 'password': contraseña})
+        })
+            .then(response => {
+                if (response.ok) location.href = 'inicio.html';
+                else mostrarAviso('✖ Credenciales incorrectas', 'error');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>
+</body>
+</html>

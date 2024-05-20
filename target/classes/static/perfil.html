@@ -31,7 +31,7 @@
             <li class="nav-item"><a class="nav-link" href="salas.html">Salas</a></li>
         </ul>
         <a href="perfil.html">
-            <img src="user-profile.jpg" class="rounded-circle active" alt="Foto de perfil" width="40" height="40">
+            <p id="nombre-perfil"></p>
         </a>
     </div>
 </nav>
@@ -85,67 +85,79 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Fetch medico info from the API
-    fetch('/api/medicos/me', {
-        method: 'GET',
-        credentials: 'include'
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('nombre-medico').textContent = data.nombre;
-        document.getElementById('email-medico').textContent = 'Email: ' + data.email;
-        document.getElementById('jefe-medico').textContent = 'Jefe: ' + (data.jefe ? 'Sí' : 'No');
-    })
-    .catch(error => console.error('Error:', error));
-
-    // Show modal to edit profile
-    document.getElementById('editarPerfilBtn').addEventListener('click', function() {
-        $('#editarPerfilModal').modal('show');
-    });
-
-    // Handle edit profile form submission
-    document.getElementById('editarPerfilForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const nombre = document.getElementById('editarNombre').value;
-        const password = document.getElementById('editarPassword').value;
-        const jefe = document.getElementById('editarJefe').checked;
-
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fetch medico info from the API
         fetch('/api/medicos/me', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            credentials: 'include',
-            body: JSON.stringify({ nombre, password, jefe })
-        })
-        .then(response => response.json())
-        .then(data => {
-            $('#editarPerfilModal').modal('hide');
-            // Update the profile information on the page
-            document.getElementById('nombre-medico').textContent = data.nombre;
-            document.getElementById('email-medico').textContent = 'Email: ' + data.email;
-            document.getElementById('jefe-medico').textContent = 'Jefe: ' + (data.jefe ? 'Sí' : 'No');
-        })
-        .catch(error => console.error('Error:', error));
-    });
-
-    // Handle logout
-    document.getElementById('cerrarSesionBtn').addEventListener('click', function() {
-        fetch('/api/medicos/me/sesion', {
-            method: 'DELETE',
+            method: 'GET',
             credentials: 'include'
         })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = '/login.html';
-            } else {
-                throw new Error('Error closing session');
-            }
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('nombre-medico').textContent = data.nombre;
+                document.getElementById('email-medico').textContent = 'Email: ' + data.email;
+                document.getElementById('jefe-medico').textContent = 'Jefe: ' + (data.jefe ? 'Sí' : 'No');
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Show modal to edit profile
+        document.getElementById('editarPerfilBtn').addEventListener('click', function() {
+            $('#editarPerfilModal').modal('show');
+        });
+
+        // Handle edit profile form submission
+        document.getElementById('editarPerfilForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('editarNombre').value;
+            const password = document.getElementById('editarPassword').value;
+            const jefe = document.getElementById('editarJefe').checked;
+
+            fetch('/api/medicos/me', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ nombre, password, jefe })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    $('#editarPerfilModal').modal('hide');
+                    // Update the profile information on the page
+                    document.getElementById('nombre-medico').textContent = data.nombre;
+                    document.getElementById('email-medico').textContent = 'Email: ' + data.email;
+                    document.getElementById('jefe-medico').textContent = 'Jefe: ' + (data.jefe ? 'Sí' : 'No');
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        // Handle logout
+        document.getElementById('cerrarSesionBtn').addEventListener('click', function() {
+            fetch('/api/medicos/me/sesion', {
+                method: 'DELETE',
+                credentials: 'include'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = 'index.html';
+                    } else {
+                        throw new Error('Error closing session');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        // Fetch medico info from the API
+        fetch('/api/medicos/me', {
+            method: 'GET',
+            credentials: 'include'
         })
-        .catch(error => console.error('Error:', error));
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('nombre-perfil').textContent = data.nombre;
+
+            })
+            .catch(error => console.error('Error:', error));
     });
-});
 </script>
 </body>
 </html>

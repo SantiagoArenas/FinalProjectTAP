@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4185cb83-8559-4079-bd41-463373ba1e72" name="Changes" comment="" />
+    <list default="true" id="4185cb83-8559-4079-bd41-463373ba1e72" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbdata.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/dbdata.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/registro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scriptRegistro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scriptRegistro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/medicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/medicos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/registro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/salas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/salas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scriptInicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scriptInicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scriptRegistro.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scriptRegistro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scriptTimetable.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scriptTimetable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/timetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/timetable.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -52,6 +70,10 @@
     &quot;accountId&quot;: &quot;9b1d2dc0-6c52-42b4-a04a-a2866393a2c9&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -79,7 +101,7 @@
     "Spring Boot.JpaApplication.executor": "Run",
     "git-widget-placeholder": "front-alvaro-2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/agonz/OneDrive - Universidad Pontificia Comillas/ICAI/3/2do Cuatri/PAT/PracticaFinalPAT",
+    "last_opened_file_path": "C:/Users/agonz/OneDrive - Universidad Pontificia Comillas/ICAI/3/2do Cuatri/PAT/docplanner/docplanner",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -119,7 +141,7 @@
       <workItem from="1716196063546" duration="2340000" />
       <workItem from="1716198518531" duration="324000" />
       <workItem from="1716199022715" duration="968000" />
-      <workItem from="1716200833984" duration="5649000" />
+      <workItem from="1716200833984" duration="16999000" />
     </task>
     <servers />
   </component>

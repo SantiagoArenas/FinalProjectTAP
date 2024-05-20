@@ -129,8 +129,9 @@ document.getElementById('registroForm').addEventListener('submit', function(e) {
                 if (!response.ok) {
                     throw new Error('Error en el fetch');
                 }
+
+                window.location.href = 'inicio.html';
             });
-            window.location.href = 'inicio.html';
         })
         .catch(error => {
             console.error('Error:', error);

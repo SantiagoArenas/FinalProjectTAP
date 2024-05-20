@@ -85,5 +85,4 @@ public class ControladorMedico {
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         servicioMedico.borrar(medico);
     }
-
 }

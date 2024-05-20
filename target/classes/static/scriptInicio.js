@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('/api/medicos/me/salas', {
-        headers: {
-          'session': 'your-session-id' // replace with your actual session ID
-        }
-      })
+  fetch('/api/medicos/me/salas', {
+    headers: {
+      'session': 'your-session-id' // replace with your actual session ID
+    }
+  })
       .then(response => response.json())
       .then(data => {
         const owlCarousel = document.querySelector('.owl-carousel');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
           `;
           owlCarousel.appendChild(salaElement);
         });
-  
+
         // Inicializar OwlCarousel después de agregar los elementos
         $(document).ready(function() {
           $(".owl-carousel").owlCarousel({
@@ -55,5 +55,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       })
       .catch(error => console.error('Error:', error));
-  });
+
+  // Fetch medico info from the API
+  fetch('/api/medicos/me', {
+    method: 'GET',
+    credentials: 'include'
+  })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('nombre-perfil').textContent = data.nombre;
+
+      })
+      .catch(error => console.error('Error:', error));
+});
   
