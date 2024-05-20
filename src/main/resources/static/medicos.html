@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Médicos - Organizador de Servicios</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<!-- Barra de navegación superior para móviles -->
+<nav class="navbar navbar-expand fixed-top d-md-none">
+  <div class="container-fluid justify-content-around">
+    <a class="nav-item nav-link" href="inicio.html"><i class="fas fa-home"></i></a>
+    <a class="nav-item nav-link" href="timetable.html"><i class="fas fa-search"></i></a>
+    <a class="nav-item nav-link active" href="medicos.html"><i class="fas fa-user-md"></i></a>
+    <a class="nav-item nav-link" href="salas.html"><i class="fas fa-clinic-medical"></i></a>
+    <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
+  </div>
+</nav>
+
+<!-- Barra de navegación para dispositivos más grandes -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-md-flex">
+  <a class="navbar-brand" href="#">DocPlanner Pro</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="inicio.html">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="timetable.html">Horarios</a></li>
+      <li class="nav-item"><a class="nav-link" href="medicos.html">Médicos</a></li>
+      <li class="nav-item"><a class="nav-link" href="salas.html">Salas</a></li>
+    </ul>
+    <a href="perfil.html">
+      <p id="nombre-perfil"></p>
+    </a>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="container" style="margin-top: 80px;">
+  <h1 class="mb-4">Médicos</h1>
+  <div class="row" id="medicos-container">
+    <!-- Añadir más perfiles de médicos aquí -->
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success" id="crear-medico-btn">Añadir Médico</button>
+    <button class="btn btn-success" id="añadir-conocimiento-btn">Añadir Conocimiento</button>
+  </div>
+</div>
+
+<!-- Modal para crear medico -->
+<div class="modal fade" id="crearMedicoModal" tabindex="-1" role="dialog" aria-labelledby="crearMedicoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="crearMedicoModalLabel">Crear Medico</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="crearMedicoForm">
+          <div class="form-group">
+            <label for="nombreMedico">Nombre</label>
+            <input type="text" class="form-control" id="nombreMedico" required>
+          </div>
+          <div class="form-group">
+            <label for="emailMedico">Email</label>
+            <input type="email" class="form-control" id="emailMedico" required>
+          </div>
+          <div class="form-group">
+            <label for="contrasenaMedico">Contraseña</label>
+            <input type="password" class="form-control" id="contrasenaMedico" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear Medico</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para añadir conocimiento -->
+<div class="modal fade" id="añadirConocimientoModal" tabindex="-1" role="dialog" aria-labelledby="añadirConocimientoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="añadirConocimientoModalLabel">Crear Sala</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="añadirConocimientoForm">
+          <div class="form-group">
+            <label for="email">Nombre del Médico</label>
+            <input type="text" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="conocimiento">Conocimiento</label>
+            <input type="number" class="form-control" id="conocimiento" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Añadir Conocimiento</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Fetch medicos from the API
+      fetch('/api/medicos', {
+          method: 'GET',
+          credentials: 'include' // Important for including cookies in the request
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Error fetching medicos');
+          }
+          return response.json();
+      })
+      .then(data => {
+          const medicosContainer = document.getElementById('medicos-container');
+          medicosContainer.innerHTML = '';
+          data.forEach(medico => {
+              const medicoElement = document.createElement('div');
+              medicoElement.className = 'col-md-4';
+              medicoElement.innerHTML = `
+                  <div class="card mb-4 shadow-sm">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">${medico.nombre}</h5>
+                          <p class="card-text">${medico.email}</p>
+                      </div>
+                  </div>
+              `;
+              medicosContainer.appendChild(medicoElement);
+          });
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+
+      // Show modal to create medico
+    document.getElementById('crear-medico-btn').addEventListener('click', function() {
+        $('#crearMedicoModal').modal('show');
+    });
+
+    // Handle create sala form submission
+    document.getElementById('crearMedicoForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nombreMedico = document.getElementById('nombreMedico').value;
+        const emailMedico = document.getElementById('emailMedico').value;
+        const contrasenaMedico = document.getElementById('contrasenaMedico').value;
+
+        fetch('/api/medicos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include', // Important for including cookies in the request
+            body: JSON.stringify({ nombre: nombreMedico, email: emailMedico, password: contrasenaMedico, jefe: false })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error creating medico');
+            }
+            return response.json();
+        })
+        .then(data => {
+            $('#crearMedicoModal').modal('hide');
+            // Reload the medicos list
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    // Show modal to añadir conocimiento
+    document.getElementById('añadir-conocimiento-btn').addEventListener('click', function() {
+        $('#añadirConocimientoModal').modal('show');
+    });
+
+    // Handle añadir conocimiento form submission
+    document.getElementById('añadirConocimientoForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        const conocimiento = document.getElementById('conocimiento').value;
+
+        fetch(`/api/conocimientos/medicos/${email}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include', // Important for including cookies in the request
+            body: JSON.stringify({nombre: conocimiento})
+        })
+        .then(response => response.json())
+        .then(data => {
+            $('#añadirConocimientoModal').modal('hide');
+            console.log(data);
+            // Reload the salas list
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+       // Fetch medico info from the API
+        fetch('/api/medicos/me', {
+            method: 'GET',
+            credentials: 'include'
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('nombre-perfil').textContent = data.nombre;
+
+        })
+        .catch(error => console.error('Error:', error));
+  });
+</script>
+</body>
+</html>

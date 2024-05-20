@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Organizador de Servicios</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+</head>
+<body>
+<!-- Barra de navegación superior para móviles -->
+<nav class="navbar navbar-expand fixed-top d-md-none">
+  <div class="container-fluid justify-content-around">
+    <a class="nav-item nav-link active" href="inicio.html"><i class="fas fa-home"></i></a>
+    <a class="nav-item nav-link" href="timetable.html"><i class="fas fa-search"></i></a>
+    <a class="nav-item nav-link" href="medicos.html"><i class="fas fa-user-md"></i></a>
+    <a class="nav-item nav-link" href="salas.html"><i class="fas fa-clinic-medical"></i></a>
+    <a class="nav-item nav-link" href="perfil.html"><i class="fas fa-user"></i></a>
+  </div>
+</nav>
+
+<!-- Barra de navegación para dispositivos más grandes -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-md-flex">
+  <a class="navbar-brand" href="#">DocPlanner Pro</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="inicio.html">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="timetable.html">Horarios</a></li>
+      <li class="nav-item"><a class="nav-link" href="medicos.html">Médicos</a></li>
+      <li class="nav-item"><a class="nav-link" href="salas.html">Salas</a></li>
+    </ul>
+    <a href="perfil.html">
+      <p id="nombre-perfil"></p>
+    </a>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="contenedor" style="margin-top: 80px;">
+  <h1 class="mb-4">Bienvenido</h1>
+  <div class="text-center">
+  <p>Optimice la asignación de salas hospitalarias con nuestra plataforma avanzada. Mejore la eficiencia operativa, reduzca tiempos de espera y ofrezca una mejor experiencia al paciente. DocPlanner Pro ofrece gestión en tiempo real, personalización según sus necesidades y soporte continuo. Transforme su hospital con organización y cuidado excepcionales.</p>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success" id="crear-conocimiento-btn">Crear Conocimiento</button>
+  </div>
+</div>
+
+<!-- Modal para añadir conocimiento -->
+<div class="modal fade" id="crearConocimientoModal" tabindex="-1" role="dialog" aria-labelledby="crearConocimientoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="crearConocimientoModalLabel">Crear Sala</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="crearConocimientoForm">
+          <div class="form-group">
+            <label for="conocimiento">Conocimiento</label>
+            <input type="text" class="form-control" id="conocimiento" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear Conocimiento</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="scriptInicio.js"></script>
+</body>
+</html>
