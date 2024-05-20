@@ -2,6 +2,24 @@ document.getElementById('isBoss').addEventListener('change', function() {
     document.getElementById('bossInfo').style.display = this.checked ? 'block' : 'none';
 });
 
+document.getElementById('numConocimientos').addEventListener('change', function() {
+    var conocimientosInfo = document.getElementById('conocimientosInfo');
+    conocimientosInfo.innerHTML = '';
+    for (var i = 0; i < this.value; i++) {
+        var conocimientoDiv = document.createElement('div');
+        conocimientoDiv.className = 'conocimiento';
+
+        var nombreConocimiento = document.createElement('input');
+        nombreConocimiento.type = 'text';
+        nombreConocimiento.name = 'nombreConocimiento' + i;
+        nombreConocimiento.id = 'nombreConocimiento' + i;
+        nombreConocimiento.placeholder = 'Tipo de técnica';
+        conocimientoDiv.appendChild(nombreConocimiento);
+
+        conocimientosInfo.appendChild(conocimientoDiv);
+    }
+});
+
 document.getElementById('numRooms').addEventListener('change', function() {
     var roomsInfo = document.getElementById('roomsInfo');
     roomsInfo.innerHTML = '';
@@ -130,9 +148,9 @@ document.getElementById('registroForm').addEventListener('submit', function(e) {
                     throw new Error('Error en el fetch');
                 }
             });
-            window.location.href = 'inicio.html';
         })
         .catch(error => {
             console.error('Error:', error);
         });
+    window.location.href = 'inicio.html';
 });

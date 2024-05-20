@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4185cb83-8559-4079-bd41-463373ba1e72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/registro.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/scriptRegistro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/styleRegistro.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbdata.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/dbdata.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/JpaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/JpaApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorSala.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorSala.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/entidad/Conocimiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/entidad/Conocimiento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/entidad/Medico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/entidad/Medico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/entidad/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/entidad/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/Modificacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/Modificacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/PeticionCalendario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/PeticionCalendario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/Registro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/Registro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/RespuestaMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/RespuestaMedico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/RespuestaSala.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/modelo/RespuestaSala.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoCalendario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoCalendario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoConocimiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoConocimiento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoMedico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/repositorio/RepoToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/servicio/ServicioMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/servicio/ServicioMedico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/servicio/ServicioSala.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/servicio/ServicioSala.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/util/Hashing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/util/Hashing.class" afterDir="false" />
-    </list>
+    <list default="true" id="4185cb83-8559-4079-bd41-463373ba1e72" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +35,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="frontend----Alvaro-II" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.JpaApplication.executor": "Run",
-    "git-widget-placeholder": "front-alvaro-1",
+    "git-widget-placeholder": "front-alvaro-2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/agonz/OneDrive - Universidad Pontificia Comillas/ICAI/3/2do Cuatri/PAT/PracticaFinalPAT",
     "list.type.of.created.stylesheet": "CSS",
@@ -147,7 +119,7 @@
       <workItem from="1716196063546" duration="2340000" />
       <workItem from="1716198518531" duration="324000" />
       <workItem from="1716199022715" duration="968000" />
-      <workItem from="1716200833984" duration="3577000" />
+      <workItem from="1716200833984" duration="5649000" />
     </task>
     <servers />
   </component>

@@ -3,38 +3,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fetch salas and update the select element
     fetch('/api/medicos/me/salas', {
-        headers: {
-            'session': sessionId
-        }
+        method: 'GET',
+        credentials: 'include' // Important for including cookies in the request
     })
-    .then(response => response.json())
-    .then(data => {
-        const salaSelect = document.getElementById('salaSelect');
-        data.forEach(sala => {
-            const option = document.createElement('option');
-            option.value = sala.nombreSala;
-            option.textContent = sala.nombreSala;
-            salaSelect.appendChild(option);
-        });
-    })
-    .catch(error => console.error('Error fetching salas:', error));
+        .then(response => response.json())
+        .then(data => {
+            const salaSelect = document.getElementById('salaSelect');
+            data.forEach(sala => {
+                const option = document.createElement('option');
+                option.value = sala.id;
+                option.textContent = sala.nombre;
+                salaSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching salas:', error));
 
     // Fetch medicos and update the select element
     fetch('/api/medicos', {
-        headers: {
-            'session': sessionId
-        }
+        method: 'GET',
+        credentials: 'include' // Important for including cookies in the request
     })
-    .then(response => response.json())
-    .then(data => {
-        const medicoSelect = document.getElementById('medicoSelect');
-        console.log(data);
-        data.forEach(medico => {
-            const option = document.createElement('option');
-            option.value = medico.id; // assuming 'id' is the identifier for medico
-            option.textContent = medico.nombre; // assuming 'nombre' is the name of medico
-            medicoSelect.appendChild(option);
-        });
+        .then(response => response.json())
+        .then(data => {
+            const medicoSelect = document.getElementById('medicoSelect');
+            data.forEach(medico => {
+                const option = document.createElement('option');
+                option.value = medico.id; // assuming 'id' is the identifier for medico
+                option.textContent = medico.nombre; // assuming 'nombre' is the name of medico
+                medicoSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching medicos:', error));
+
+    // Fetch medico info from the API
+    fetch('/api/medicos/me', {
+        method: 'GET',
+        credentials: 'include'
     })
-    .catch(error => console.error('Error fetching medicos:', error));
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('nombre-perfil').textContent = data.nombre;
+
+        })
+        .catch(error => console.error('Error:', error));
 });
