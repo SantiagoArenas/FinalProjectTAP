@@ -104,12 +104,19 @@ public class ControladorConocimiento {
     }
 
     @GetMapping("/api/conocimientos/medicos/{email}")
-    public ArrayList<Conocimiento> getConocimientos(@PathVariable String email, @CookieValue(value = "session", required = true) String sesion){
+    public ArrayList<Conocimiento> getConocimientosMedico(@PathVariable String email, @CookieValue(value = "session", required = true) String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         Medico m = repoMedico.findByEmail(email);
         if (m == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         return servicioConocimiento.getConocimientosMedico(m);
+    }
+
+    @GetMapping("/api/conocimientos")
+    public ArrayList<Conocimiento> getConocimientos(@CookieValue(value = "session", required = true) String sesion){
+        Medico medico = servicioMedico.buscarMedico(sesion);
+        if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        return (ArrayList<Conocimiento>) repoConocimiento.findAll();
     }
 
 }

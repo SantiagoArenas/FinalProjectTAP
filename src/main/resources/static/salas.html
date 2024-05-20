@@ -22,7 +22,7 @@
 
 <!-- Barra de navegación para dispositivos más grandes -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-md-flex">
-    <a class="navbar-brand" href="#">Hospital</a>
+    <a class="navbar-brand" href="#">DocPlanner Pro</a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="inicio.html">Inicio</a></li>
@@ -44,6 +44,7 @@
     </div>
     <div class="text-center">
         <button class="btn btn-success" id="crear-sala-btn">Añadir Sala</button>
+        <button class="btn btn-success" id="añadir-conocimiento-btn">Añadir Conocimiento</button>
     </div>
 </div>
 
@@ -74,29 +75,56 @@
     </div>
 </div>
 
+<!-- Modal para añadir conocimiento -->
+<div class="modal fade" id="añadirConocimientoModal" tabindex="-1" role="dialog" aria-labelledby="añadirConocimientoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="añadirConocimientoModalLabel">Crear Sala</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="añadirConocimientoForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre de la Sala</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="conocimiento">Conocimiento</label>
+                        <input type="number" class="form-control" id="conocimiento" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Añadir Conocimiento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Fetch salas from the API
-        fetch('/api/medicos/me/salas', {
-            method: 'GET',
-            credentials: 'include' // Important for including cookies in the request
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error fetching salas');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const salasContainer = document.getElementById('salas-container');
-                salasContainer.innerHTML = '';
-                data.forEach(sala => {
-                    const salaElement = document.createElement('div');
-                    salaElement.className = 'col-md-4';
-                    salaElement.innerHTML = `
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch salas from the API
+    fetch('/api/medicos/me/salas', {
+        method: 'GET',
+        credentials: 'include' // Important for including cookies in the request
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error fetching salas');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const salasContainer = document.getElementById('salas-container');
+        salasContainer.innerHTML = '';
+        data.forEach(sala => {
+            const salaElement = document.createElement('div');
+            salaElement.className = 'col-md-4';
+            salaElement.innerHTML = `
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body text-center">
                         <h5 class="card-title">${sala.nombre}</h5>
@@ -104,60 +132,91 @@
                     </div>
                 </div>
             `;
-                    salasContainer.appendChild(salaElement);
-                });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-
-        // Show modal to create sala
-        document.getElementById('crear-sala-btn').addEventListener('click', function() {
-            $('#crearSalaModal').modal('show');
+            salasContainer.appendChild(salaElement);
         });
-
-        // Handle create sala form submission
-        document.getElementById('crearSalaForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const nombreSala = document.getElementById('nombreSala').value;
-            const prioridadSala = document.getElementById('prioridadSala').value;
-
-            fetch('/api/medicos/me/salas', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                credentials: 'include', // Important for including cookies in the request
-                body: JSON.stringify({ nombre: nombreSala, prioridad: prioridadSala })
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Error creating sala');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    $('#crearSalaModal').modal('hide');
-                    // Reload the salas list
-                    window.location.reload();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        });
-
-        // Fetch medico info from the API
-        fetch('/api/medicos/me', {
-            method: 'GET',
-            credentials: 'include'
-        })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('nombre-perfil').textContent = data.nombre;
-
-            })
-            .catch(error => console.error('Error:', error));
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
+
+    // Show modal to create sala
+    document.getElementById('crear-sala-btn').addEventListener('click', function() {
+        $('#crearSalaModal').modal('show');
+    });
+
+    // Handle create sala form submission
+    document.getElementById('crearSalaForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nombreSala = document.getElementById('nombreSala').value;
+        const prioridadSala = document.getElementById('prioridadSala').value;
+
+        fetch('/api/medicos/me/salas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include', // Important for including cookies in the request
+            body: JSON.stringify({ nombre: nombreSala, prioridad: prioridadSala })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error creating sala');
+            }
+            return response.json();
+        })
+        .then(data => {
+            $('#crearSalaModal').modal('hide');
+            // Reload the salas list
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    // Show modal to añadir conocimiento
+    document.getElementById('añadir-conocimiento-btn').addEventListener('click', function() {
+        $('#añadirConocimientoModal').modal('show');
+    });
+
+    // Handle añadir conocimiento form submission
+    document.getElementById('añadirConocimientoForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const conocimiento = document.getElementById('conocimiento').value;
+
+        fetch(`/api/conocimientos/salas/${nombre}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include', // Important for including cookies in the request
+            body: JSON.stringify({nombre: conocimiento})
+        })
+        .then(response => response.json())
+        .then(data => {
+            $('#añadirConocimientoModal').modal('hide');
+            console.log(data);
+            // Reload the salas list
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+     // Fetch medico info from the API
+          fetch('/api/medicos/me', {
+              method: 'GET',
+              credentials: 'include'
+          })
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById('nombre-perfil').textContent = data.nombre;
+
+          })
+          .catch(error => console.error('Error:', error));
+});
 </script>
 </body>
 </html>

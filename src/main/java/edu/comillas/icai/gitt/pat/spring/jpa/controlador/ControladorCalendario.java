@@ -29,10 +29,11 @@ public class ControladorCalendario {
         servicioCalendario.gestionarMes(pc.año(), pc.mes());
     }
 
-    @GetMapping("/api/medicos/me/calendario")
-    public List<Calendario> getMes(@RequestBody PeticionCalendario pc, @CookieValue(value = "session", required = true) String sesion){
+    @GetMapping("/api/medicos/me/calendario/{año}/{mes}")
+    public List<Calendario> getMes(@PathVariable int año, @PathVariable int mes, @CookieValue(value = "session", required = true) String sesion){
         Medico medico = servicioMedico.buscarMedico(sesion);
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        PeticionCalendario pc = new PeticionCalendario(año, mes);
         return servicioCalendario.getMes(pc);
     }
 

@@ -6,6 +6,7 @@ import edu.comillas.icai.gitt.pat.spring.jpa.modelo.Login;
 import edu.comillas.icai.gitt.pat.spring.jpa.modelo.Modificacion;
 import edu.comillas.icai.gitt.pat.spring.jpa.modelo.Registro;
 import edu.comillas.icai.gitt.pat.spring.jpa.modelo.RespuestaMedico;
+import edu.comillas.icai.gitt.pat.spring.jpa.repositorio.RepoMedico;
 import edu.comillas.icai.gitt.pat.spring.jpa.servicio.ServicioMedico;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 public class ControladorMedico {
 
     @Autowired
     ServicioMedico servicioMedico;
+
+    @Autowired
+    RepoMedico repoMedico;
 
     @PostMapping("/api/medicos")
     @ResponseStatus(HttpStatus.CREATED)
@@ -85,4 +91,13 @@ public class ControladorMedico {
         if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         servicioMedico.borrar(medico);
     }
+
+    @GetMapping("/api/medicos")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Medico> listaMedicos(@CookieValue(value = "session", required = true) String sesion) {
+        Medico medico = servicioMedico.buscarMedico(sesion);
+        if (medico == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        return (List<Medico>) repoMedico.findAll();
+    }
+
 }

@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4185cb83-8559-4079-bd41-463373ba1e72" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbdata.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/dbdata.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/registro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scriptRegistro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scriptRegistro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorConocimiento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/comillas/icai/gitt/pat/spring/jpa/controlador/ControladorMedico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/inicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/medicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/medicos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/registro.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/registro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/salas.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/salas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scriptInicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scriptInicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scriptRegistro.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scriptRegistro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/scriptTimetable.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scriptTimetable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/timetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/timetable.html" afterDir="false" />
-    </list>
+    <list default="true" id="61df5ef9-6ca4-4873-9f48-91dc0cf5dc23" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,121 +13,89 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="HTML File" />
-        <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;AlvaroGonzalez05&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/SantiagoArenas/PracticaFinalPAT.git&quot;,
-    &quot;accountId&quot;: &quot;9b1d2dc0-6c52-42b4-a04a-a2866393a2c9&quot;
-  }
-}</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2geo6T36k7Hk4GHQkWE5H4gane3" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2fbBlBXHRnOgxNYvMQFpTyPLrfa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="sortByType" value="true" />
-    <option name="sortKey" value="BY_TYPE" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
+    "Application.JpaApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.JpaApplication.executor": "Run",
-    "git-widget-placeholder": "front-alvaro-2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/agonz/OneDrive - Universidad Pontificia Comillas/ICAI/3/2do Cuatri/PAT/docplanner/docplanner",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+    "last_opened_file_path": "C:/Users/msbg1/OneDrive - Universidad Pontificia Comillas/Escritorio/PracticaFinalPAT_v2/PracticaFinalPAT",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\msbg1\OneDrive - Universidad Pontificia Comillas\Escritorio\GITT-BA\TERCERO\2O CUATRI\PROGRAMACIÓN DE APLICACIONES TELEMÁTICAS\docplanner\docplanner\src\main\resources\static" />
+      <recent name="C:\Users\msbg1\OneDrive - Universidad Pontificia Comillas\Escritorio\GITT-BA\TERCERO\2O CUATRI\PROGRAMACIÓN DE APLICACIONES TELEMÁTICAS\docplanner\docplanner\src\main\java\edu\comillas\icai\gitt\pat\spring\jpa\modelo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\msbg1\OneDrive - Universidad Pontificia Comillas\Escritorio\GITT-BA\TERCERO\2O CUATRI\PROGRAMACIÓN DE APLICACIONES TELEMÁTICAS\docplanner\docplanner\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.comillas.icai.gitt.pat.spring.jpa.util" />
+      <recent name="edu.comillas.icai.gitt.pat.spring.jpa.repositorio" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="JpaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="JpaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.comillas.icai.gitt.pat.spring.jpa.JpaApplication" />
       <module name="jpa" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.comillas.icai.gitt.pat.spring.jpa.JpaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.comillas.icai.gitt.pat.spring.jpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JpaApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4185cb83-8559-4079-bd41-463373ba1e72" name="Changes" comment="" />
-      <created>1716067228692</created>
+      <changelist id="61df5ef9-6ca4-4873-9f48-91dc0cf5dc23" name="Changes" comment="" />
+      <created>1714060045494</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1716067228692</updated>
-      <workItem from="1716067229774" duration="6030000" />
-      <workItem from="1716108662537" duration="1428000" />
-      <workItem from="1716196063546" duration="2340000" />
-      <workItem from="1716198518531" duration="324000" />
-      <workItem from="1716199022715" duration="968000" />
-      <workItem from="1716200833984" duration="16999000" />
+      <updated>1714060045494</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

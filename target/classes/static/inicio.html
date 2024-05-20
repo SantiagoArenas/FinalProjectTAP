@@ -24,7 +24,7 @@
 
 <!-- Barra de navegación para dispositivos más grandes -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-md-flex">
-  <a class="navbar-brand" href="#">Hospital</a>
+  <a class="navbar-brand" href="#">DocPlanner Pro</a>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"><a class="nav-link" href="inicio.html">Inicio</a></li>
@@ -41,8 +41,34 @@
 <!-- Contenido principal -->
 <div class="contenedor" style="margin-top: 80px;">
   <h1 class="mb-4">Bienvenido</h1>
-  <div class="owl-carousel owl-theme">
-    <!-- Aquí se insertarán dinámicamente las tarjetas -->
+  <div class="text-center">
+  <p>Optimice la asignación de salas hospitalarias con nuestra plataforma avanzada. Mejore la eficiencia operativa, reduzca tiempos de espera y ofrezca una mejor experiencia al paciente. DocPlanner Pro ofrece gestión en tiempo real, personalización según sus necesidades y soporte continuo. Transforme su hospital con organización y cuidado excepcionales.</p>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success" id="crear-conocimiento-btn">Crear Conocimiento</button>
+  </div>
+</div>
+
+<!-- Modal para añadir conocimiento -->
+<div class="modal fade" id="crearConocimientoModal" tabindex="-1" role="dialog" aria-labelledby="crearConocimientoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="crearConocimientoModalLabel">Crear Sala</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="crearConocimientoForm">
+          <div class="form-group">
+            <label for="conocimiento">Conocimiento</label>
+            <input type="text" class="form-control" id="conocimiento" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Crear Conocimiento</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 

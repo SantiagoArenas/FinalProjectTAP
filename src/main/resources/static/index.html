@@ -35,13 +35,13 @@
             },
             body: JSON.stringify({'email': correo, 'password': contraseña})
         })
-            .then(response => {
-                if (response.ok) location.href = 'inicio.html';
-                else mostrarAviso('✖ Credenciales incorrectas', 'error');
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        .then(response => {
+            if (response.ok) location.href = 'inicio.html';
+            else mostrarAviso('✖ Credenciales incorrectas', 'error');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
 </script>
 </body>
