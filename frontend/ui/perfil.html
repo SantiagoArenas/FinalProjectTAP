@@ -22,7 +22,7 @@
 
 <!-- Barra de navegación para dispositivos más grandes -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-none d-md-flex">
-    <a class="navbar-brand" href="#">Hospital</a>
+    <a class="navbar-brand" href="#">DocPlanner Pro</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
@@ -38,14 +38,14 @@
 </nav>
 
 <!-- Contenido principal -->
-<div class="contenedor" style="margin-top: 80px;">
-    <h1 class="mb-4">Perfil del Usuario</h1>
+<div class="contenedor">
+    <h1>Tu Perfil</h1>
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Nombre del Usuario</h5>
-            <p class="card-text">Email: usuario@hospital.com</p>
-            <a href="#" class="btn btn-primary">Editar Perfil</a>
-            <a href="#" class="btn btn-danger">Cerrar Sesión</a>
+            <h5 class="card-title" id="userName">Nombre del Usuario</h5>
+            <p class="card-text" id="userEmail">Email: usuario@hospital.com</p>
+            <button id="editProfileBtn" class="btn btn-primary">Editar Perfil</button>
+            <button id="logoutBtn" class="btn btn-danger">Cerrar Sesión</button>
         </div>
     </div>
 </div>
