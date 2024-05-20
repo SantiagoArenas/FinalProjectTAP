@@ -58,4 +58,6 @@ form .doctor, form .room {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    background-color: rgb(220, 220, 220);
+    margin-top: 20px;
 }

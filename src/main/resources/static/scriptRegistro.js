@@ -127,10 +127,10 @@ document.getElementById('registroForm').addEventListener('submit', function(e) {
         .then(responses => {
             responses.forEach(response => {
                 if (!response.ok) {
-                    throw new Error('Error en la llamada fetch');
+                    throw new Error('Error en el fetch');
                 }
             });
-            console.log('Todas las llamadas fetch se completaron con éxito');
+            window.location.href = 'inicio.html';
         })
         .catch(error => {
             console.error('Error:', error);
