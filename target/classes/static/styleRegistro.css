@@ -1,0 +1,57 @@
+@import 'styles.css';
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 20px;
+    color: #333;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"], form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form div input {
+    margin-bottom: 5px;
+}
+
+/* Estilos adicionales para los minicuestionarios de médicos y salas */
+form .doctor, form .room {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
