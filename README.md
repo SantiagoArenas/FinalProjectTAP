@@ -105,16 +105,16 @@ La planificación inicial esta hecha para que sea adaptable y flexible.
 ### Equipo:
 - **Miguel: Backend**
   - **Responsabilidades:**
-    - Desarrollo de servicios y entidades en Java.
-    - Implementar las APIs de registro, login y gestión de conocimientos.
-    - Diseñar el modelo de base de datos.
-    - Documentar la API y el modelo de datos.
+    - Desarrollo de servicios y entidades en Java. 
+    - Implementar las APIs de registro, login y gestión de conocimientos. )
+    - Diseñar el modelo de base de datos. 
+    - Documentar la API y el modelo de datos. 
   - **Tareas:**
-    - Configurar el proyecto Spring Boot.
-    - Implementar el endpoint de registro de médicos.
-    - Implementar el endpoint de login de médicos.
-    - Diseñar el modelo de datos para los médicos y conocimientos.
-    - Implementar el endpoint para agregar, actualizar y eliminar conocimientos.
+    - Configurar el proyecto Spring Boot. (COMPLETADO)
+    - Implementar el endpoint de registro de médicos.(COMPLETADO)
+    - Implementar el endpoint de login de médicos.(COMPLETADO)
+    - Diseñar el modelo de datos para los médicos y conocimientos.(COMPLETADO)
+    - Implementar el endpoint para agregar, actualizar y eliminar conocimientos.(COMPLETADO)
 
 - **María: Tests y Planificación del Proyecto (QA)**
   - **Responsabilidades:**
@@ -123,9 +123,9 @@ La planificación inicial esta hecha para que sea adaptable y flexible.
     - Ayuda con la parte de JavaScript del frontend.
     - Configurar GitHub Actions para CI/CD.
   - **Tareas:**
-    - Desarrollar pruebas unitarias y de integración.
-    - Planificar y documentar las iteraciones del proyecto.
-    - Ayudar con la implementación de la lógica de frontend en JavaScript.
+    - Desarrollar pruebas unitarias y de integración. (COMPLETADO)
+    - Planificar y documentar las iteraciones del proyecto. (COMPLETADO)
+    - Ayudar con la implementación de la lógica de frontend en JavaScript.(COMPLETADO-AYUDA EXTRA DE MIGUEL)
 
 - **Álvaro: Frontend**
   - **Responsabilidades:**
@@ -133,10 +133,10 @@ La planificación inicial esta hecha para que sea adaptable y flexible.
     - Diseño de la interfaz de usuario.
     - Documentación técnica del proyecto
   - **Tareas:**
-    - Configurar el proyecto de frontend.
-    - Diseñar e implementar la interfaz de usuario para el registro, login y gestión de conocimientos.
-    - Conectar el frontend con la API de backend.
-    - Mejorar la experiencia de usuario y la usabilidad.
+    - Configurar el proyecto de frontend. (COMPLETADO)
+    - Diseñar e implementar la interfaz de usuario para el registro, login y gestión de conocimientos. (COMPLETADO)
+    - Conectar el frontend con la API de backend. (COMPLETADO)
+    - Mejorar la experiencia de usuario y la usabilidad. (COMPLETADO)
 
 - **Santiago: Frontend**
   - **Responsabilidades:**
@@ -144,7 +144,7 @@ La planificación inicial esta hecha para que sea adaptable y flexible.
     - Implementación de la lógica de conexión con la API.
     - Documentación técnica del proyecto
   - **Tareas:**
-    - Configurar el proyecto de frontend.
-    - Diseñar e implementar la interfaz de usuario para el registro, login y gestión de conocimientos.
-    - Implementar la lógica de conexión con la API de backend.
-    - Crear componentes reutilizables.
+    - Configurar el proyecto de frontend. (COMPLETADO)
+    - Diseñar e implementar la interfaz de usuario para el registro, login y gestión de conocimientos. (COMPLETADO)
+    - Implementar la lógica de conexión con la API de backend.(COMPLETADO)
+
