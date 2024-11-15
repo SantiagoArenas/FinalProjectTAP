@@ -1,150 +1,100 @@
-# PracticaFinalPAT
-Práctica final de PAT de Santiago Arenas Martín, María Castilla Montes, Álvaro González Tabernero, Miguel Sánchez-Beato Gil.
+# FinalProjectTAP  
+Final Project for Telematic Applications Programming (Web Design).  
 
-# Planificación del Proyecto
+# Project Planning  
 
-### Definición del Roadmap:
-El proyecto se planificó en dos iteraciones de dos semanas cada una, con un ciclo de "desarrollo ágil". Cada iteración tiene objetivos claro, priorizando las tareas esenciales para garantizar un avance constante y que sea medible.
-Se eligieron Springs de dos semanas debido a la gran carga académica en el momento del curso en el que estabamos y siendo realistas de que habría semanas en las que no podríamos trabajar demasiado.
-La planificación inicial esta hecha para que sea adaptable y flexible.
+### Roadmap Definition:  
+The project was planned in two iterations of two weeks each, following an "agile development" cycle. Each iteration has clear objectives, prioritizing essential tasks to ensure steady and measurable progress.  
+Two-week sprints were chosen due to the high academic workload at this stage of the course and the realistic expectation that some weeks would allow little work. The initial planning is designed to be adaptable and flexible.  
 
-#### Iteración 1 (Semana 1 - Semana 2):
-- **Objetivos:**
-  - Desarrollo del backend para la gestión de médicos.
-  - Implementación de las funcionalidades básicas de registro y login.
-  - Dseño del futuru desarrollo del frontend para las funcionalidades implementadas.
-- **Tareas:**
-  - Backend:
-    - Configurar el proyecto Spring Boot.
-    - Implementar la API para registrar médicos.
-    - Implementar la API para el login de médicos.
-    - Diseñar el modelo de base de datos inicial.
-    - Configurar GitHub Actions para la integración continua.
-  - Frontend:
-    - Configurar el proyecto de frontend.
-    - Diseñar la interfaz de usuario para el registro y login.
-    - Implementar la lógica de conexión con la API de backend.
-    - Crear componentes reutilizables.
-  - Documentación inicial del diseño y la arquitectura.
+#### Iteration 1 (Week 1 - Week 2):  
+- **Objectives:**  
+  - Develop the backend for managing doctors.  
+  - Implement basic registration and login functionalities.  
+  - Design the future development of the frontend for implemented features.  
+- **Tasks:**  
+  - Backend:  
+    - Set up the Spring Boot project.  
+    - Implement the API to register doctors.  
+    - Implement the API for doctor login.  
+    - Design the initial database model.  
+    - Configure GitHub Actions for continuous integration.  
+  - Frontend:  
+    - Set up the frontend project.  
+    - Design the user interface for registration and login.  
+    - Implement the logic to connect with the backend API.  
+    - Create reusable components.  
+  - Initial documentation of the design and architecture.  
 
-#### Iteración 2 (Semana 3 - Semana 4):
-- **Objetivos:**
-  - Desarrollo del backend para la gestión de conocimientos.
-  - Implementación de las funcionalidades avanzadas de actualización y eliminación de médicos.
-  - Refinamiento del sistema de CI/CD.
-  - Desarrollo del frontend para las nuevas funcionalidades.
-  - Documentación final y presentación.
-- **Tareas:**
-  - Backend:
-    - Implementar la API para gestionar conocimientos.
-    - Implementar la API para actualizar y eliminar la información de los médicos.
-    - Mejorar la configuración de GitHub Actions para CI/CD.
-    - Desarrollo e implementacion de Tests.
-  - Frontend:
-    - Diseñar la interfaz de usuario para la gestión de conocimientos.
-    - Implementar la lógica de conexión con la API de backend para conocimientos.
-    - Mejorar la experiencia de usuario y la usabilidad.
-  - Preparar la presentación final del proyecto.
+#### Iteration 2 (Week 3 - Week 4):  
+- **Objectives:**  
+  - Develop the backend for knowledge management.  
+  - Implement advanced functionalities for updating and deleting doctors.  
+  - Refine the CI/CD system.  
+  - Develop the frontend for the new functionalities.  
+  - Complete the final documentation and presentation.  
+- **Tasks:**  
+  - Backend:  
+    - Implement the API for managing knowledge.  
+    - Implement the API for updating and deleting doctors' information.  
+    - Improve the GitHub Actions configuration for CI/CD.  
+    - Develop and implement tests.  
+  - Frontend:  
+    - Design the user interface for knowledge management.  
+    - Implement the logic to connect with the backend API for knowledge management.  
+    - Enhance user experience and usability.  
+  - Prepare the final project presentation.  
 
-## 2. División de Tareas y Priorización: Backlog
+## 2. Task Division and Prioritization: Backlog  
 
-### Backlog del Proyecto:
-1. **Configuración del entorno de desarrollo (Alta prioridad)**
-   - Configurar el proyecto Spring Boot.
-   - Configurar el proyecto de frontend.
-   - Configurar GitHub Actions para CI/CD.
+### Project Backlog:  
+1. **Development Environment Setup (High Priority)**  
+   - Configure the Spring Boot project.  
+   - Configure the frontend project.  
+   - Configure GitHub Actions for CI/CD.  
 
-2. **Implementación del registro de médicos (Alta prioridad)**
-   - Diseñar el modelo de datos para los médicos.
-   - Implementar el endpoint de registro de médicos.
-   - Validar los datos de entrada para el registro.
-   - Diseñar e implementar la interfaz de usuario para el registro.
+2. **Doctor Registration Implementation (High Priority)**  
+   - Design the data model for doctors.  
+   - Implement the endpoint for doctor registration.  
+   - Validate input data for registration.  
+   - Design and implement the user interface for registration.  
 
-3. **Implementación del login de médicos (Alta prioridad)**
-   - Implementar el endpoint de login de médicos.
-   - Generar y gestionar tokens de sesión.
-   - Implementar la lógica de autenticación.
-   - Diseñar e implementar la interfaz de usuario para el login.
+3. **Doctor Login Implementation (High Priority)**  
+   - Implement the endpoint for doctor login.  
+   - Generate and manage session tokens.  
+   - Implement authentication logic.  
+   - Design and implement the user interface for login.  
 
-4. **Gestión de conocimientos (Media prioridad)**
-   - Diseñar el modelo de datos para los conocimientos.
-   - Implementar el endpoint para agregar conocimientos.
-   - Implementar el endpoint para actualizar conocimientos.
-   - Implementar el endpoint para eliminar conocimientos.
-   - Diseñar e implementar la interfaz de usuario para la gestión de conocimientos.
+4. **Knowledge Management (Medium Priority)**  
+   - Design the data model for knowledge.  
+   - Implement the endpoint to add knowledge.  
+   - Implement the endpoint to update knowledge.  
+   - Implement the endpoint to delete knowledge.  
+   - Design and implement the user interface for knowledge management.  
 
-5. **Actualización de información de médicos (Media prioridad)**
-   - Implementar el endpoint para actualizar la información de los médicos.
-   - Validar los datos de entrada para la actualización.
-   - Diseñar e implementar la interfaz de usuario para la actualización de médicos.
+5. **Updating Doctor Information (Medium Priority)**  
+   - Implement the endpoint to update doctor information.  
+   - Validate input data for updates.  
+   - Design and implement the user interface for updating doctors.  
 
-6. **Documentación y Presentación (Alta prioridad)**
-   - Completar la documentación técnica y de usuario.
-   - Preparar la presentación final del proyecto.
+6. **Documentation and Presentation (High Priority)**  
+   - Complete technical and user documentation.  
+   - Prepare the final project presentation.  
 
-## 3. Objetivos en Cada Iteración: Tareas a Completar
+## 3. Iteration Objectives: Tasks to Complete  
 
-### Iteración 1:
-- Configuración completa del entorno de desarrollo.
-- Implementación y prueba de las APIs de registro y login.
-- Configuración básica de CI/CD con GitHub Actions.
-- Diseño del modelo de base de datos inicial.
-- Desarrollo del frontend para registro y login.
-- Documentación técnica inicial.
+### Iteration 1:  
+- Complete development environment setup.  
+- Implement and test the APIs for registration and login.  
+- Basic CI/CD setup with GitHub Actions.  
+- Initial database model design.  
+- Develop the frontend for registration and login.  
+- Initial technical documentation.  
 
-### Iteración 2:
-- Implementación y prueba de las APIs de gestión de conocimientos.
-- Implementación y prueba de las APIs de actualización y eliminación de médicos.
-- Mejora y refinamiento del sistema de CI/CD.
-- Desarrollo del frontend para la gestión de conocimientos y actualización de médicos.
-- Finalización de la documentación técnica y de usuario.
-- Preparación de la presentación final del proyecto.
-
-## 4. Asignación de Tareas entre los Miembros del Equipo y su Progreso
-
-### Equipo:
-- **Miguel: Backend**
-  - **Responsabilidades:**
-    - Desarrollo de servicios y entidades en Java. 
-    - Implementar las APIs de registro, login y gestión de conocimientos. )
-    - Diseñar el modelo de base de datos. 
-    - Documentar la API y el modelo de datos. 
-  - **Tareas:**
-    - Configurar el proyecto Spring Boot. (COMPLETADO)
-    - Implementar el endpoint de registro de médicos.(COMPLETADO)
-    - Implementar el endpoint de login de médicos.(COMPLETADO)
-    - Diseñar el modelo de datos para los médicos y conocimientos.(COMPLETADO)
-    - Implementar el endpoint para agregar, actualizar y eliminar conocimientos.(COMPLETADO)
-
-- **María: Tests y Planificación del Proyecto (QA)**
-  - **Responsabilidades:**
-    - Desarrollo de pruebas.
-    - Planificación del proyecto.
-    - Ayuda con la parte de JavaScript del frontend.
-    - Configurar GitHub Actions para CI/CD.
-  - **Tareas:**
-    - Desarrollar pruebas unitarias y de integración. (COMPLETADO)
-    - Planificar y documentar las iteraciones del proyecto. (COMPLETADO)
-    - Ayudar con la implementación de la lógica de frontend en JavaScript.(COMPLETADO-AYUDA EXTRA DE MIGUEL)
-
-- **Álvaro: Frontend**
-  - **Responsabilidades:**
-    - Desarrollo del frontend.
-    - Diseño de la interfaz de usuario.
-    - Documentación técnica del proyecto
-  - **Tareas:**
-    - Configurar el proyecto de frontend. (COMPLETADO)
-    - Diseñar e implementar la interfaz de usuario para el registro, login y gestión de conocimientos. (COMPLETADO)
-    - Conectar el frontend con la API de backend. (COMPLETADO)
-    - Mejorar la experiencia de usuario y la usabilidad. (COMPLETADO)
-
-- **Santiago: Frontend**
-  - **Responsabilidades:**
-    - Desarrollo del frontend.
-    - Implementación de la lógica de conexión con la API.
-    - Documentación técnica del proyecto
-  - **Tareas:**
-    - Configurar el proyecto de frontend. (COMPLETADO)
-    - Diseñar e implementar la interfaz de usuario para el registro, login y gestión de conocimientos. (COMPLETADO)
-    - Implementar la lógica de conexión con la API de backend.(COMPLETADO)
-
+### Iteration 2:  
+- Implement and test the APIs for knowledge management.  
+- Implement and test the APIs for updating and deleting doctors.  
+- Improve and refine the CI/CD system.  
+- Develop the frontend for knowledge management and doctor updates.  
+- Finalize technical and user documentation.  
+- Prepare the final project presentation.  
